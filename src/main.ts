@@ -8,6 +8,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, //solo deja la data validada
       forbidNonWhitelisted: true, //si esta y la anterior son true solo permite la data que se espera
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
     }),
   );
   app.setGlobalPrefix('api/v2');
